@@ -10,13 +10,17 @@ app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
 app.
-	get('/quotes', function(req, res){
-		cmd.get('pwd', function(data){
-			console.log('resulting data')
+	post('/quotes', function(req, res){
+		console.log(req.body)
+		console.log('loading PhantomJs')
+		var command = "phantomjs app.js "+req.body.username+" "+req.body.password
+		cmd.get(command, function(data){
+			console.log('Response from PhantomJs: ')
 			console.log(data)
+			res.json(data)
 		})
 	})
 
 app.listen(3000, function(){
 	console.log('Listening at port: 3000'); 
-})
+});

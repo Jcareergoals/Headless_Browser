@@ -20,9 +20,7 @@ page.open(url, function(status){
 		// include jquery library
 		page.includeJs("https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js", function(){
 			// callback for 'sanboxed' console.log messages withing pages
-			page.onConsoleMessage = function(msg){
-				console.log(msg);
-			}
+			page.onConsoleMessage = function(msg){ console.log(msg); }
 			page.evaluate(function(u, p){
 				$("#userID").val(u); 
 				$("#password").val(p); 
@@ -34,12 +32,13 @@ page.open(url, function(status){
 				page.render('loggedIn.pdf'); // screenshot logged in page
 				page.open("https://fsi.policyport.com/agentlisting/login?__client=FSI", function(){
 					page.render("workBench.pdf"); // screenshot workbench page
-					phantom.exit(); 
+					console.log("this is the response"); 
+					phantom.exit(1); 
 				}); 
 			}, 5000);
 		}); 
 	} else {
-		console.log('unable to login');
+		console.log('Login credentials are incorrect: Contact Richard Hassad');
 		phantom.exit(); 
 	}
 }); 
