@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.
 	get('/quotes', function(req, res){
 		cmd.get('pwd', function(data){
+			console.log('resulting data')
 			console.log(data)
 		})
 	})
