@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var cmd = require('node-cmd');
 
 var app = express(); 
 
@@ -10,7 +11,9 @@ app.use(bodyParser.json());
 
 app.
 	get('/quotes', function(req, res){
-		res.json('working')
+		cmd.get('pwd', function(data){
+			console.log(data)
+		})
 	})
 
 app.listen(3000, function(){

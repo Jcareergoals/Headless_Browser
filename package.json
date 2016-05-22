@@ -4,6 +4,7 @@
   "description": "A headless browser for HascoAgency to automate common user tasks",
   "dependencies": {
     "body-parser": "^1.15.1",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "node-cmd": "^1.1.1"
   }
 }
