@@ -2,8 +2,8 @@ var page = require('webpage').create();
 var system = require('system');
 
 // response for invalid usage
-if(system.args.length === 1){
-	console.log('Usage: app.js <url address>'); 
+if(system.args.length < 4){
+	console.log('Usage: app.js <url> <username> <password>'); 
 	phantom.exit(); 
 }
 
@@ -17,9 +17,10 @@ page.onConsoleMessage = function(msg){
 }
 
 var t = Date.now() ;
-page.open(url, function(){
+page.open(url, function(status){
 	if(status === 'success'){
-		console.log(status);
+		t = Date.now() - t;
+		console.log("Load time: " + t + " msec(s)");
 		phantom.exit(); 
 	} else {
 		console.log('unable to login');
