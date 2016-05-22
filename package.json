@@ -1,0 +1,8 @@
+{
+	"name":"Headless Browser", 
+	"created_by":"Jose Chery", 
+	"description":"A headless browser for HascoAgency to automate common user tasks", 
+	"dependencies":{
+
+	}
+}
