@@ -1,8 +1,9 @@
 {
-	"name":"Headless Browser", 
-	"created_by":"Jose Chery", 
-	"description":"A headless browser for HascoAgency to automate common user tasks", 
-	"dependencies":{
-
-	}
+  "name": "Headless Browser",
+  "created_by": "Jose Chery",
+  "description": "A headless browser for HascoAgency to automate common user tasks",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4"
+  }
 }
