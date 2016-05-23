@@ -31,11 +31,13 @@ page.open(url, function(status){
 			setTimeout(function(){
 				page.render('loggedIn.pdf'); // screenshot logged in page
 				page.open("https://fsi.policyport.com/agentlisting/login?__client=FSI", function(){
-					page.render("workBench.pdf"); // screenshot workbench page
-					console.log("this is the response"); 
-					phantom.exit(1); 
+					setTimeout(function(){
+						page.render("workBench.pdf"); // screenshot workbench page
+						console.log("this is the response"); 
+						phantom.exit(1); 
+					},6000); 
 				}); 
-			}, 5000);
+			}, 6000);
 		}); 
 	} else {
 		console.log('Login credentials are incorrect: Contact Richard Hassad');
